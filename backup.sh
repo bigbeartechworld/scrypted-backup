@@ -12,7 +12,10 @@ backup_directory="./backups"
 # File name
 file_name="$file_prefix$(date +%Y%m%d_%H%M%S).zip"
 
-rsync -avz "$ssh_server:/root/.scrypted" ./
+# Sync the .scrypted directory from the SSH server
+rsync -avzp --exclude="node_modules" "$ssh_server:/root/.scrypted" ./
+
+# Zip up the .scrypted directory
 zip -r "$file_name" ./.scrypted
 
 # Check if the directory exists
