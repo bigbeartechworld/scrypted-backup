@@ -21,17 +21,6 @@ cp "$local_directory/$latest_file" ./
 # Unzip the file
 unzip "$latest_file" -d "./.scrypted-restore"
 
-# Check if the directory exists on the remote server
-ssh "$ssh_server" "[ -d \"$remote_directory/.scrypted-restore\" ]"
-
-# If the directory doesn't exist, create it on the remote server
-if [ $? -ne 0 ]; then
-    echo "Creating .scrypted-restore directory on the remote server..."
-    ssh "$ssh_server" "mkdir \"$remote_directory/.scrypted-restore\""
-else
-    echo ".scrypted-restore directory already exists on the remote server."
-fi
-
 # Rsync the latest file to the SSH server with password authentication
 rsync -avz "./.scrypted-restore/.scrypted/" "$ssh_server:$remote_directory/.scrypted"
 
