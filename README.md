@@ -2,6 +2,10 @@
 
 Scrypted Backup is a tool for backing up and restoring Scrypted data.
 
+## Walkthrough Video
+
+[![Alt text](https://img.youtube.com/vi/35FY2gYL-O0/0.jpg)](https://www.youtube.com/watch?v=35FY2gYL-O0)
+
 ## Using Proxmox
 
 So if you're using Proxmox you need to open up ssh and run the following commands:
