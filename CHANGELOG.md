@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Use sshpass to pass password to ssh
 - On restoring show a list of backups to choose from ordered by newest to oldest
 
+## Changed
+
+- Clear out the .scrypted directory before restoring
+
 ## [1.0.0] - 2023-06-16
 
 Initial release
